@@ -1,0 +1,376 @@
+<html>
+
+<head>
+    <base href="https://rpg-character-sheet-o-rama.com/ancient-mysteries-sheet/">
+    <title>Ancient Mysteries Character Sheet</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23404040' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .character-sheet {
+            background-color: #2a2a2a;
+            border-radius: 25px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            padding: 30px;
+            width: 800px;
+            position: relative;
+        }
+
+        .character-sheet::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #ffd700, #4a4a4a, #6495ed);
+            border-radius: 30px;
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffd700;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .char-info {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        .char-image {
+            width: 100%;
+            height: 200px;
+            background-color: #3a3a3a;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .char-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .char-stats {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .stat-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .stat-label-life {
+            color: #ff4136;
+        }
+
+        .stat-label-sanity {
+            color: #a78bfa;
+        }
+
+        .stat-bar {
+            height: 20px;
+            background-color: #3a3a3a;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .stat-fill {
+            height: 100%;
+            background-color: #6495ed;
+            border-radius: 10px;
+        }
+
+        .stat-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .char-description {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #3a3a3a;
+            border-radius: 15px;
+        }
+
+        .char-attributes,
+        .char-items {
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #3a3a3a;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="character-sheet">
+        <h1>
+            <element id="name"> </element>
+        </h1>
+        <div class="char-info">
+            <div class="char-image">
+                <img id="image"
+                    src="https://rpg-character-sheet-o-rama.com/ancient-mysteries-sheet/elara-shadowmoon.jpg"
+                    width="400" height="200">
+            </div>
+            <div class="char-stats">
+                <div class="stat">
+                    <div class="stat-label stat-label-life">
+                        <span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                                    fill="#ff4136" />
+                            </svg>
+                            Vida <button id="addLife" onclick="changeLife(1)">+</button><button id="reduceLife"  onclick="changeLife(-1)">-</button>
+                        </span>
+                        <span>
+                            <element id="life">0</element> / <element id="maxLife">0</element>
+                        </span>
+                    </div>
+                    <div class="stat-bar">
+                        <div id="lifeBar" class="stat-fill" style="width: 75%; background-color: #ff4136;"></div>
+                    </div>
+                </div>
+                <div class="stat">
+                    <div class="stat-label stat-label-sanity">
+                        <span>
+                            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 3.5C7.58 3.5 4 7.08 4 11.5c0 2.45 1.08 4.66 2.84 6.17C7.72 18.46 9.7 19 12 19c2.3 0 4.28-.54 5.16-1.33C18.92 16.16 20 13.95 20 11.5c0-4.42-3.58-8-8-8zm0 14c-1.86 0-3.41-.37-4.23-.93C6.74 15.73 6 14.2 6 11.5c0-3.31 2.69-6 6-6s6 2.69 6 6c0 2.7-.74 4.23-1.77 5.07-.82.56-2.37.93-4.23.93z"
+                                    fill="#a78bfa" />
+                                <path
+                                    d="M12 6.5c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+                                    fill="#a78bfa" />
+                            </svg>
+                            Sanidade
+                        </span>
+                        <span>
+                            <element id="sanity">0</element> / <element id="maxSanity">0</element>
+                        </span>
+                    </div>
+                    <div class="stat-bar">
+                        <div id="sanityBar" class="stat-fill" style="width: 90%; background-color: #a78bfa;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="char-description">
+            <element id="description"></element>
+        </div>
+        <div class="char-attributes">
+            <h2>Atributos</h2>
+            <ul>
+                <li>Atributo: 10</li>
+                <li>Atributo: 10</li>
+                <li>Atributo: 10</li>
+                <li>Atributo: 10</li>
+            </ul>
+        </div>
+        <div class="char-items">
+            <h2>Items</h2>
+            <ul>
+                <li>Maça</li>
+                <li>Maça</li>
+                <li>Maça</li>
+                <li>Maça</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://accounts.google.com/gsi/client" ></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        const clientId = '374944506442-s6ppnadlr3oqgvtmtoc6lm56q7r09aol.apps.googleusercontent.com'
+        const spreadsheetId = "1jcoFaEUhHh8DnBu5C5AV0RcN_awbZXc7A7-nVUwDpT8";
+        const range = "RPG!A:B";
+        const apiKey = "AIzaSyDdZFCQRLPxu-aKsKSF_RuyVp3KKySYnfA";
+
+        let tokenClient;
+        let gapiInited = false;
+        let gisInited = false;
+
+        function gapiLoaded() {
+            gapi.load('client', initializeGapiClient);
+        }
+
+        async function initializeGapiClient() {
+            await gapi.client.init({
+                apiKey: apiKey,
+                discoveryDocs: ["https://sheets.googleapis.com/$discovery/rest?version=v4"],
+            });
+            gapiInited = true;
+            maybeEnableButtons();
+        }
+
+        function gisLoaded() {
+            tokenClient = google.accounts.oauth2.initTokenClient({
+                client_id: clientId,
+                scope: 'https://www.googleapis.com/auth/spreadsheets',
+                callback: '',  // will be set later
+            });
+            gisInited = true;
+            maybeEnableButtons();
+        }
+
+        function maybeEnableButtons() {
+            if (gapiInited && gisInited) {
+                fetchData();
+            }
+        }
+
+        function handleAuthClick() {
+            tokenClient.callback = async (resp) => {
+                if (resp.error) {
+                    throw (resp);
+                }
+                console.log('auth ok');
+                fetchData()
+            };
+
+            if (gapi.client.getToken() === null) {
+                tokenClient.requestAccessToken({ prompt: 'consent' });
+            } else {
+                tokenClient.requestAccessToken({ prompt: '' });
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Document loaded')
+            gapiLoaded();
+            gisLoaded();
+        })
+
+    </script>
+    <script>
+
+        async function fetchData() {
+            if (gapi.client.getToken() === null) {
+                handleAuthClick();
+            } else {
+                const response = await gapi.client.sheets.spreadsheets.values.get({
+                    spreadsheetId: spreadsheetId,
+                    range: range,
+                });
+                updateCharacterSheet(response.result.values);
+            }
+        }
+
+        async function fetchData() {
+            
+            if (gapi.client.getToken() === null) {
+                handleAuthClick();
+            } else {
+                const response = await gapi.client.sheets.spreadsheets.values.get({
+                    spreadsheetId: spreadsheetId,
+                    range: range,
+                });
+                if(firstTime) {
+                    setInterval(fetchData, 3000);
+                    firstTime = false;
+                }
+                updateCharacterSheet(response.result.values);
+            }
+            /*const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+            const response = await fetch(url);
+            const data = await response.json();
+            updateCharacterSheet(data.values);*/
+        }
+
+        function updateCharacterSheet(data) {
+            const characterData = {};
+            data.forEach(row => {
+                characterData[row[0]] = row[1];
+            });
+
+            document.getElementById('name').textContent = characterData['Name'] || 'Unknown';
+            document.getElementById('life').textContent = characterData['Life'] || 'Unknown';
+            document.getElementById('sanity').textContent = characterData['Sanity'] || 'Unknown';
+            document.getElementById('maxLife').textContent = characterData['MaxLife'] || 'Unknown';
+            document.getElementById('maxSanity').textContent = characterData['MaxSanity'] || 'Unknown';
+            document.getElementById('description').textContent = characterData['Description'] || 'Unknown';
+            document.getElementById('image').src = characterData['Image'];
+            document.getElementById('sanityBar').style.width = `${characterData['Sanity'] / characterData['MaxSanity'] * 100}%`;
+            document.getElementById('lifeBar').style.width = `${characterData['Life'] / characterData['MaxLife'] * 100}%`;
+        }
+
+        function changeLife(amount) {
+            let lifeCell = 'B2'; 
+            gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: spreadsheetId,
+                range: lifeCell,
+            }).then(function (response) {
+                let lifeValue = parseInt(response.result.values[0][0]);
+                lifeValue += amount;
+
+                gapi.client.sheets.spreadsheets.values.update({
+                    spreadsheetId: spreadsheetId,
+                    range: lifeCell,
+                    valueInputOption: 'RAW',
+                    resource: {
+                        values: [[lifeValue]]
+                    }
+                }).then(() => {
+                    fetchData();
+                });
+            }, function (response) {
+                console.log('Error: ' + response.result.error.message);
+            });
+        }
+
+        let firstTime = true;
+        fetchData();
+    </script>
+</body>
+
+</html>
